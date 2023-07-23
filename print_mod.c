@@ -16,4 +16,4 @@ int print_mod(va_list args)
 	_putchar('%');
 
 	return (1);
-} /* Author by Mojalefa and Thoko *\
+}
