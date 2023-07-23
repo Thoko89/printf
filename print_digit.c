@@ -39,4 +39,4 @@ int print_digit(va_list args)
 	}
 
 	return (count_fun);
-} /* Author by Mojalefa and Thoko *\
+}
