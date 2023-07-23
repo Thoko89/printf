@@ -1,37 +1,42 @@
 #include <stdarg.h>
+#include <stdio.h>
 #include "holberton.h"
-
-
-void convert_and_print(unsigned int num, int *count);
-
 /**
- * print_bin - prints int to binary
- * b: pointer to unsigned int
- * Return: integer, number of characters printed
- */
-
+* print_bin - convert to binary
+* @b: number in decinal
+* Return: number of chars printed
+*/
 int print_bin(va_list b)
 {
-	unsigned int num = va_arg(b, unsigned int);
+	unsigned int len, powten, j, digit, n, num;
 	int count = 0;
 
-	convert_and_print(num, &count);
-
+	n = va_arg(b, unsigned int);
+	if (n != 0)
+	{
+		num = n;
+		len = 0;
+		while (num != 0)
+		{
+			num /= 2;
+			len++;
+		}
+		powten = 1;
+		for (j = 1; j <= len - 1; j++)
+			powten *= 2;
+		for (j = 1; j <= len; j++)
+		{
+			digit = n / powten;
+			_putchar(digit + '0');
+			count++;
+			n -= digit * powten;
+			powten /= 2;
+		}
+	}
+	else
+	{
+		_putchar('0');
+		return (1);
+	}
 	return (count);
-}
-
-/**
- * convert_and_print - converts int to binary, then prints
- * @num: unsigned int
- * @count: pointer to count the iteration
- */
-
-void convert_and_print(unsigned int num, int *count)
-{
-	if (num / 2)
-		convert_and_print(num / 2, count);
-
-	_putchar((num % 2) + '0');
-
-	(*count)++;
 }
