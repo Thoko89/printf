@@ -62,4 +62,4 @@ On success, _printf returns the number of printed characters. If formats is erro
 
 .SH AUTHORS
 
-Thoko Lomntu; Sabelo Mj /* Author by Mojalefa and Thoko *\
+Thoko Lomntu; Sabelo Mj
