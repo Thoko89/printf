@@ -38,4 +38,4 @@ int get_function(char con_spec, va_list args)
 	}
 
 	return (count_fun);
-} /* Author by Mojalefa and Thoko *\
+}
