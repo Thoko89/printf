@@ -23,4 +23,4 @@ int print_rev_string(va_list args)
 	}
 	count_fun--;
 	return (count_fun);
-} /* Author by Mojalefa and Thoko *\
+}
