@@ -2,6 +2,23 @@
 #define HOLBERTONH
 
 #include <stdarg.h>
+#include <stdio.h>
+#include <unistd.h>
+
+#define UNUSED(x) (void)(x)
+#define BUFF_SIZE 1024
+
+/* FLAGS */
+#define F_MINUS 1
+#define F_PLUS 2
+#define F_ZERO 4
+#define F_HASH 8
+#define F_SPACE 16
+
+/* SIZES */
+#define S_LONG 2
+#define S_SHORT 1
+
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(va_list c);
@@ -14,7 +31,9 @@ int print_unsig(va_list u);
 int print_octal(va_list o);
 int print_x(va_list x);
 int print_X(va_list X);
-int print_rot13(va_list R);
+int print_rot13string(va_list types, char buffer[],
+	int flags, int width, int precision, int size);
+
 /**
   * struct code_format - Struct format
   *

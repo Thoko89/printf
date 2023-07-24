@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include "holberton.h"
+
 /**
 *print_rev - prints astring in reverse
 *@r: string to print
@@ -22,4 +23,4 @@ int print_rev(va_list r)
 		j++;
 	}
 	return (j);
-}
+}/* This code runs *\

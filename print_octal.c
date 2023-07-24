@@ -1,10 +1,12 @@
 #include "holberton.h"
+
 /**
 * print_octal - unsigned int argument is converted to unsigned octal
 * @o: unsigned to be converted
 * Descriptions: prints unsigned octal
 * Return: size the output
 */
+
 int print_octal(va_list o)
 {
 	unsigned int len, powten, j, digit, n, num;
@@ -38,4 +40,4 @@ int print_octal(va_list o)
 		return (1);
 	}
 	return (count);
-}
+}/* MJ and Thoko *\
