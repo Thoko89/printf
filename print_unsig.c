@@ -1,12 +1,10 @@
 #include "holberton.h"
-
 /**
 * print_unsig - function that prints unsigned number
 * @u: unsigned number
 * Descriptions: prints unsigned number with putchar
 * Return: size the output
 */
-
 int print_unsig(va_list u)
 {
 	unsigned int len, powten, j, digit, n, num;
@@ -40,4 +38,4 @@ int print_unsig(va_list u)
 		return (1);
 	}
 	return (count);
-}/* MJ and Thoko *\
+}

@@ -1,52 +1,30 @@
 #include "holberton.h"
 #include <stdio.h>
-
 /**
-  * print_rot13 - encodes a string into rot13
-  * @types: List of arguments
-  * @buffer: Buffer array to handle print
-  * @flags:  Calculates active flags
-  * @width: get width
-  * @precision: Precision specification
-  * @size: Size specifier
-  * Return: Numbers of chars printed
+  * print_rot13 - encodes a string into rot13.
+  * @R: string to convert
+  * Return: size the output text
   */
-
-int print_rot13string(va_list types, char buffer[], int flags, int width, int precision, int size)
+int print_rot13(va_list R)
 {
-	char x;
-	char *str;
-	unsigned int i, j;
-	int count = 0;
-	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int j, i, count = 0;
+	char *r;
+	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz";
+	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLM nopqrstuvwxyzabcdefghijklm";
 
-	str = va_arg(types, char *);
-	UNUSED(buffer);
-	UNUSED(flags);
-	UNUSED(width);
-	UNUSED(precision);
-	UNUSED(size);
-
-	if (str == NULL)
-		str = "(AHYY)";
-	for (i = 0; str[i]; i++)
+	r = va_arg(R, char *);
+	if (r == NULL)
+		r = "(null)";
+	for (j = 0; r[j] != '\0'; j++)
 	{
-		for (j = 0; in[j]; j++)
+		for (i = 0; input[i] != '\0'; i++)
 		{
-			if (in[j] == str[i])
+			if (r[j] == input[i])
 			{
-				x = out[j];
-				write(1, &x, 1);
+				_putchar(output[i]);
 				count++;
 				break;
 			}
-		}
-		if (!in[j])
-		{
-			x = str[i];
-			write(1, &x, 1);
-			count++;
 		}
 	}
 	return (count);
